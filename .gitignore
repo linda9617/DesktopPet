@@ -1,0 +1,10 @@
+.venv/
+build/
+dist/
+*.spec
+app.ico
+_poses_*.png
+_live_*.png
+_icon.png
+_build.log
+__pycache__/
