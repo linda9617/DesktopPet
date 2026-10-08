@@ -1,4 +1,8 @@
-"""Dev helper: start the real app, exercise the brain, switch skins, grab, quit."""
+"""Dev helper: start the real app, exercise the brain, switch skins, grab, quit.
+
+Usage, from the repo root (so the app modules import):
+    python -m tools.smoke   ->  _live_<key>.png
+"""
 
 from __future__ import annotations
 
