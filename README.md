@@ -14,7 +14,7 @@
 | 打包 exe | `build.bat` → `dist\DeskCat.exe` |
 | 首次装环境 | `build.bat` 会自动建 `.venv` 并装依赖 |
 
-exe 是单文件，约 43 MB（PySide6 打包的固有体积），拷到任何 Windows 机器双击即用，不需要装 Python。
+exe 是单文件，约 22 MB，拷到任何 Windows 机器双击即用，不需要装 Python。打进 exe 的内容由 [DeskCat.spec](DeskCat.spec) 决定：PySide6 默认会带上一堆用不到的 Qt 组件（OpenGL、QML、Pdf、翻译文件…），spec 里把它们滤掉了，体积减半。以后如果用到了新的 Qt 功能，记得检查一下 spec 里有没有把它过滤掉。
 
 ## 皮肤
 
@@ -82,7 +82,7 @@ skins/
   march7.py      三月七（头发几何全是类属性的数字表，画法一行不改就能出新版）
 ```
 
-所有皮肤都是纯代码画的，没有 `assets/` 目录，`build.bat` 也没有 `--add-data`。
+所有皮肤都是纯代码画的，没有 `assets/` 目录，`DeskCat.spec` 里也没有 `datas`。
 
 **关键设计**：[pose.py](pose.py) 的字段是固定词汇表，皮肤自己诠释语义 —— 猫的"耳朵抖"在芙宁娜身上是"呆毛 / 帽子抖"，"尾巴摆"是"发尾摆"。所以 [pet.py](pet.py) 完全不知道当前是哪个皮肤，加皮肤不用动状态机。
 
