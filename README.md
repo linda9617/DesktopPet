@@ -108,7 +108,7 @@ class MySkin(Skin):
 
 2. 加进 [skins/\_\_init\_\_.py](skins/__init__.py) 的 `SKINS`。完事 —— 菜单、配置、图标自动跟上。
 
-3. `python _render_check.py myskin` 渲染 9 个关键姿态成拼图，直接看对不对。
+3. `python -m tools.render_check myskin` 渲染 9 个关键姿态成拼图，直接看对不对。
 
 **坐标约定**：画布 200×180，`MARGIN` 另加 5px 防裁切。键盘固定在 `y 134..160`、`x 22..178`。
 
@@ -132,8 +132,10 @@ class MySkin(Skin):
 
 ## 开发辅助
 
-| 脚本 | 用途 |
-|---|---|
-| [_render_check.py](_render_check.py) | 把每个皮肤的 9 个关键姿态渲染成 `_poses_<key>.png` 拼图，改完画法直接看 |
-| [_smoke.py](_smoke.py) | 起真实窗口、模拟按键串、逐个切皮肤抓图 `_live_<key>.png`、退出 |
-| [makeico.py](makeico.py) | 用同一份绘制代码生成 `app.ico`，图标不会和形象脱节 |
+都在仓库根目录下运行。
+
+| 脚本 | 运行 | 用途 |
+|---|---|---|
+| [tools/render_check.py](tools/render_check.py) | `python -m tools.render_check [skin_key ...]` | 把每个皮肤的 9 个关键姿态渲染成 `_poses_<key>.png` 拼图，改完画法直接看 |
+| [tools/smoke.py](tools/smoke.py) | `python -m tools.smoke` | 起真实窗口、模拟按键串、逐个切皮肤抓图 `_live_<key>.png`、退出 |
+| [makeico.py](makeico.py) | `build.bat` 自动调用 | 用同一份绘制代码生成 `app.ico`，图标不会和形象脱节 |

@@ -1,6 +1,7 @@
 """Dev helper: render key poses for every skin so the art can be eyeballed.
 
-Usage: python _render_check.py [skin_key ...]   ->  _poses_<key>.png
+Usage, from the repo root (so the app modules import):
+    python -m tools.render_check [skin_key ...]   ->  _poses_<key>.png
 """
 
 from __future__ import annotations
